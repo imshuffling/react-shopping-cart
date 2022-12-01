@@ -24,8 +24,7 @@ function App() {
 
   const handleDecrease = (item: any): void => {
     let x = cart.map((i) => {
-      if (item.id === i.id && i.quantity > 1) {
-        console.log("hola");
+      if (item.id === i.id && i.quantity > 0) {
         i.quantity -= 1;
       }
       return i;
@@ -34,11 +33,11 @@ function App() {
   };
 
   const total = () => {
-    let x = 0;
+    let total = 0;
     cart.map((i: any) => {
-      return (x += i.price * i.quantity);
+      return (total += i.price * i.quantity);
     });
-    return x.toFixed(2);
+    return total.toFixed(2);
   };
 
   const clearCart = () => {
@@ -61,7 +60,10 @@ function App() {
       <div className="grid max-w-sm grid-cols-1 mx-auto text-center divide-y shadow-md">
         {cart.map((item: any) => {
           return (
-            <div className="p-4 text-white bg-purple-500 flex flex-row items-center gap-10">
+            <div
+              key={item.id}
+              className="p-4 text-white bg-purple-500 flex flex-row items-center gap-10"
+            >
               <div className="grow flex flex-col">
                 <div>{item.name}</div>
                 <div>£{item.price}</div>
