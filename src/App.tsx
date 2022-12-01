@@ -46,10 +46,18 @@ function App() {
     setCart(z);
   };
 
+  if (!cart.length) {
+    return (
+      <div className="mx-auto max-w-3xl w-full py-10">
+        <h1 className="text-4xl mb-8 text-center">Shopping Cart Demo</h1>
+        <div className="p-4 text-center">Cart is empty</div>
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto max-w-3xl w-full py-10">
       <h1 className="text-4xl mb-8 text-center">Shopping Cart Demo</h1>
-
       <div className="grid max-w-sm grid-cols-1 mx-auto text-center divide-y shadow-md">
         {cart.map((item: any) => {
           return (
