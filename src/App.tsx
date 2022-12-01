@@ -97,8 +97,14 @@ function App() {
       </div>
 
       <div className="text-center mt-5">
-        <h4>TOTAL: £{total()}</h4>
-        <button onClick={clearCart}>Clear cart</button>
+        <h4 className="mb-5 text-xl font-bold">TOTAL: £{total()}</h4>
+        <button
+          onClick={clearCart}
+          type="button"
+          className="flex flex-row mx-auto grow-0 items-center rounded-full border border-transparent bg-orange-600 py-3 px-4 text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+        >
+          Clear cart
+        </button>
       </div>
     </div>
   );
