@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { XMarkIcon, MinusIcon, PlusIcon } from "@heroicons/react/24/solid";
 import data from "./data";
+import FlipMove from "react-flip-move";
 
 function App() {
   const [cart, setCart] = useState(data);
@@ -57,7 +58,7 @@ function App() {
   return (
     <div className="mx-auto max-w-3xl w-full py-10">
       <h1 className="text-4xl mb-8 text-center">Shopping Cart Demo</h1>
-      <div className="grid max-w-sm grid-cols-1 mx-auto text-center divide-y shadow-md">
+      <FlipMove className="grid max-w-sm grid-cols-1 mx-auto text-center divide-y shadow-md">
         {cart.map((item: any) => {
           return (
             <div
@@ -104,7 +105,7 @@ function App() {
             </div>
           );
         })}
-      </div>
+      </FlipMove>
 
       <div className="text-center mt-5">
         <h4 className="mb-5 text-xl font-bold">TOTAL: £{total()}</h4>
